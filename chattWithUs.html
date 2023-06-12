@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-us</title>
+    <!-- fav icon  -->
+    <link rel="icon" type="image/x-icon" href="uploads/apple (1).png">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="styles/js-snackbar.css">
+    <script src="scripts/js-snackbar.js"></script>
+    <script src="node_modules/socket.io/client-dist/socket.io.js"></script>
+    <script src="node_modules/socketio-file-upload/client.js"></script>
+    <!-- font awesome icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+</head>
+
+<body>
+    <div class="maincontainer">
+        <nav>
+            <div class="img-logo" style="padding-left:15px;padding-right: 15px;">
+                <i class="fa fa-comments fa-4x" aria-hidden="true"></i>
+            </div>
+            <div></div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li><a href="chattWithUs.html">Chat</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container main" style="margin-left: 15px;margin-right: 15px;">
+            <div id="pconnect" style="display: none;">
+                <input placeholder="display name.." type="text" id="dname" class="text-grow" /><button type="button" id="connect" class="btn">Connecting</button>
+            </div>
+            <div id="pchat" style="display: none;" class="my-2">
+                <div class="c-1">
+                    <div class='list-header'>Users</div>
+                    <ul class='list' id="users">
+
+                    </ul>
+                </div>
+                <div class="c-2">
+                    <div><span id="hname"></span> <span id="rname"></span></div>
+                <div class="flex my-1">
+                    <select  type="text" id="rooms" class="text-grow"></select><button type="button" id="join" class="btn">Join Room</button>
+                </div>
+                <div class="flex my-1">
+                    <input placeholder="room name..." type="text" id="room" class="text-grow" /><button type="button" id="create" class="btn">Create Room</button>
+                </div>
+                    <div class="flex">
+                        <input placeholder="message..." type="text" id="msg" class="text-grow" /><button type="button" id="send" class="btn">Send Message</button><button type="button" id="browse" class="btn">Browse</button>
+                    </div>
+                    <div id="drop" class="my-1">
+                        Add Files...
+                    </div>
+                    <div id="pmessages">
+                        <div class='list-header mt'>Messages</div>
+                        <ul class='list' id="messages"></ul>
+                    </div>
+                    <div id="files" class="files"></div>
+                </div>
+            </div>
+        </div>
+        <div id="space"></div>
+        <footer class="footer">
+            <p>Copyright &copy; 2023 Apple Inc. All rights reserved.</p>
+        </footer>
+        <input type='file' id='fu' style='display:none;' />
+    </div>
+    <script src="js/chattingus.js"></script>
+</body>
+
+</html>

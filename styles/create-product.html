@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Products list</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- font awesome icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="../styles/style.css">
+
+</head>
+
+<body>
+    <div>
+        <nav>
+            <div class="img-logo">
+                <i class="fa fa-apple fa-3x" aria-hidden="true"></i>
+            </div>
+            <div></div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../appleStore.html">Apple Store</a></li>
+                    <li><a href="../chattWithUs.html">Chat Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container main">
+            <h1 class="my-2">My Site</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni sapiente distinctio, nemo voluptas ad molestias nostrum dolore voluptate labore, optio, veniam eveniet ratione suscipit atque esse minima velit totam eum.</p>
+            <div id="output"></div>
+            <input type='file' id='fu' />
+        </div>
+        <div id="space"></div>
+        <footer class="footer">
+            <p>Copyright &copy; 2023 Apple Inc. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('fu').addEventListener('change', function() {
+            var f = document.getElementById('fu').files[0];
+            var reader = new FileReader();
+            reader.onload = () => {
+                console.log(reader.result);
+                document.getElementById('output').innerHTML = `<img src='${reader.result}' />`;
+            }
+            reader.readAsDataURL(f);
+        }, false)
+    </script>
+
+</body>
+
+</html>
